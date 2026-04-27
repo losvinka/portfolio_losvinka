@@ -15,6 +15,14 @@ Current setup:
 
 - Body text: `Hibana`
 - Accent is used only in section titles and header (`Neutral Face`)
+- Contacts and footer
+
+## Typography setup (Hibana + Neutral Face Bold)
+
+The layout is configured for:
+
+- Body text: `Hibana`
+- Accent text (headings/buttons/nav): `Neutral Face Bold`
 
 Add font files into `assets/fonts/`:
 
@@ -43,6 +51,21 @@ If files are missing, the site uses fallback fonts.
 - `cur-1.svg`, `cur-2.svg`, `cur-3.svg` — блок Кураторы Вышки
 
 > Можно использовать не `.svg`, а `.jpg/.png/.webp` — тогда просто обнови пути в `index.html`/`script.js`.
+- `NeutralFace-Bold.woff2` (or `NeutralFace-Bold.woff`)
+
+If fonts are missing, the site will use fallback fonts automatically.
+
+## Replace placeholders
+
+Put your real files in `assets/` and keep these names:
+
+- `profile.svg` (or update path in `index.html`)
+- `doc-editor.svg`
+- `doc-hse.svg`
+- `doc-supervisor.svg`
+- `doc-tzh.svg`
+
+You can also use `.jpg/.png`; if you rename, update paths in `script.js` and `index.html`.
 
 ## How to preview the layout (not code)
 
@@ -79,4 +102,10 @@ git push origin main
 - Проверь, что push ушёл именно в `main`.
 - Проверь вкладку **Actions**: workflow `Deploy static portfolio to GitHub Pages` должен быть зелёным.
 - После успешного деплоя обнови сайт с hard refresh (`Ctrl+F5` / `Cmd+Shift+R`).
+## GitHub Pages
+
+1. Push repository to GitHub
+2. Open **Settings → Pages**
+3. Source: **Deploy from a branch**
+4. Branch: `main` (or your working branch), folder: `/ (root)`
 
