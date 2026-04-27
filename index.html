@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тамара Пак — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav-wrap">
+        <div class="logo">losvinka</div>
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#about" data-i18n="nav.about">Обо мне</a>
+          <a href="#projects" data-i18n="nav.projects">Проекты</a>
+          <a href="#posts" data-i18n="nav.posts">Посты</a>
+          <a href="#docs" data-i18n="nav.docs">Рекомендации</a>
+          <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+        </nav>
+        <button id="langSwitch" class="btn ghost">EN</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container card">
+        <img src="assets/profile.svg" alt="Портрет Тамары Пак" class="avatar" />
+        <div>
+          <p class="eyebrow" data-i18n="hero.role">Редактор · Копирайтер · Креативные индустрии</p>
+          <h1 data-i18n="hero.name">Тамара Пак <span>(losvinka)</span></h1>
+          <p class="lead" data-i18n="hero.text">
+            Студентка 2 курса НИУ ВШЭ. Главный редактор «Кураторы Вышки». Работаю на стыке
+            текстов, брендинга и коммуникационных форматов.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" class="container section">
+        <h2 data-i18n="about.title">Обо мне</h2>
+        <div class="card">
+          <p data-i18n="about.text">
+            Учусь в НИУ ВШЭ на программе «Управление в креативных индустриях». Окончила школу
+            с двумя медалями и красным аттестатом. Сейчас — главный редактор одного из самых
+            масштабных студенческих сообществ НИУ ВШЭ «Кураторы Вышки». Хочу развиваться в
+            издательской сфере: медиа, digital-редактура и контент-стратегии.
+          </p>
+          <ul class="chips">
+            <li data-i18n="about.s1">Командная работа</li>
+            <li data-i18n="about.s2">Ответственность</li>
+            <li data-i18n="about.s3">Адаптивность</li>
+            <li data-i18n="about.s4">Многозадачность</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" class="container section">
+        <h2 data-i18n="projects.title">Проекты</h2>
+        <p class="subtitle" data-i18n="projects.note">
+          Благодаря обучению на программе я совмещаю базу кодинга, маркетинга и ведения
+          нон-скриптед форматов.
+        </p>
+
+        <div class="filters" id="filters"></div>
+        <div class="grid" id="projectGrid"></div>
+      </section>
+
+      <section id="posts" class="container section">
+        <h2 data-i18n="posts.title">Редакторские посты</h2>
+        <div class="grid two-col posts-grid">
+          <article class="card">
+            <h3 data-i18n="posts.tjTitle">Посты в Т—Ж</h3>
+            <p data-i18n="posts.tjText">
+              С октября по декабрь я работала над серией контентных материалов для Т—Ж: от
+              анонсов до образовательных и вовлекающих публикаций. В фокусе — сложные темы,
+              которые важно объяснить понятно и интересно.
+            </p>
+            <div id="tjGallery" class="post-gallery"></div>
+          </article>
+          <article class="card">
+            <h3 data-i18n="posts.curTitle">Посты в «Кураторах Вышки»</h3>
+            <p data-i18n="posts.curText">
+              Работаю в сообществе с октября 2025, а с января 2026 — главный редактор. Веду
+              редакционные серии, образовательные форматы, благодарственные посты, рассылки и
+              PR-кампании отборов.
+            </p>
+            <ul class="link-list">
+              <li><a href="https://t.me/curatorhse/2321" target="_blank" rel="noreferrer">Знакомство с организаторами</a></li>
+              <li><a href="https://t.me/curatorhse/2246" target="_blank" rel="noreferrer">Образовательные посты</a></li>
+              <li><a href="https://t.me/curatorhse/2206" target="_blank" rel="noreferrer">Серия благодарностей</a></li>
+              <li><a href="https://t.me/curatorhse/2169" target="_blank" rel="noreferrer">PR-кампания отборов</a></li>
+            </ul>
+            <div id="curGallery" class="post-gallery"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="docs" class="container section">
+        <h2 data-i18n="docs.title">Сертификаты и рекомендации</h2>
+        <p class="subtitle" data-i18n="docs.text">Карточки открываются в полноформатном просмотре.</p>
+        <div class="grid" id="docsGrid"></div>
+      </section>
+    </main>
+
+    <section id="contacts" class="contact-footer-band">
+      <div class="container contact-footer-inner">
+        <h2 data-i18n="contacts.title">Контакты</h2>
+        <div class="contacts">
+          <a href="tel:+79253521291">+7 (925) 352-12-91</a>
+          <a href="https://t.me/losvinka" target="_blank" rel="noreferrer">Telegram: @losvinka</a>
+          <a href="https://vk.ru/losvinka" target="_blank" rel="noreferrer">VK</a>
+          <a href="https://hsedesign.ru/account/losvinka" target="_blank" rel="noreferrer">HSE Portfolio</a>
+          <a href="mailto:tlpak@edu.hse.ru">Mail: tlpak@edu.hse.ru</a>
+        </div>
+        <p class="footer">© 2026 losvinka</p>
+      </div>
+    </section>
+
+    <dialog id="previewModal" class="modal">
+      <button class="close" id="closeModal" aria-label="Закрыть">×</button>
+      <img id="previewImage" src="" alt="Предпросмотр документа" />
+      <p id="previewTitle"></p>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
