@@ -7,42 +7,33 @@ Static bilingual (RU/EN) portfolio website with:
 - Projects with filters
 - Editorial posts section
 - Certificates/recommendation cards with full-screen preview modal
-- Unified full-width black contacts + footer band
+- Contacts and footer
 
-## Typography setup (Hibana + optional Neutral Face)
+## Typography setup (Hibana + Neutral Face Bold)
 
-Current setup:
+The layout is configured for:
 
 - Body text: `Hibana`
-- Accent is used only in section titles and header (`Neutral Face`)
+- Accent text (headings/buttons/nav): `Neutral Face Bold`
 
 Add font files into `assets/fonts/`:
 
 - `Hibana.woff2` (or `Hibana.woff`)
-- `NeutralFace-Bold.woff2` (or `NeutralFace-Bold.woff`) — optional
+- `NeutralFace-Bold.woff2` (or `NeutralFace-Bold.woff`)
 
-If files are missing, the site uses fallback fonts.
+If fonts are missing, the site will use fallback fonts automatically.
 
-## Как добавить фотографии (пошагово)
+## Replace placeholders
 
-1. Подготовь изображения в `.jpg`, `.png` или `.webp`.
-2. Положи файлы в папку `assets/` и `assets/posts/`.
-3. Сохрани те же имена, чтобы ничего не править в коде.
+Put your real files in `assets/` and keep these names:
 
-### Обязательные файлы в `assets/`
+- `profile.svg` (or update path in `index.html`)
+- `doc-editor.svg`
+- `doc-hse.svg`
+- `doc-supervisor.svg`
+- `doc-tzh.svg`
 
-- `profile.svg` — фото профиля
-- `doc-editor.svg` — сертификат редактора
-- `doc-hse.svg` — справка НИУ ВШЭ
-- `doc-supervisor.svg` — рекомендация от академ. руководителя
-- `doc-tzh.svg` — рекомендация от Т—Ж
-
-### Фотографии постов в `assets/posts/`
-
-- `tj-1.svg`, `tj-2.svg`, `tj-3.svg` — блок Т—Ж
-- `cur-1.svg`, `cur-2.svg`, `cur-3.svg` — блок Кураторы Вышки
-
-> Можно использовать не `.svg`, а `.jpg/.png/.webp` — тогда просто обнови пути в `index.html`/`script.js`.
+You can also use `.jpg/.png`; if you rename, update paths in `script.js` and `index.html`.
 
 ## How to preview the layout (not code)
 

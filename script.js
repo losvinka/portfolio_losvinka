@@ -33,26 +33,13 @@ const docs = [
   { titleRu: 'Рекомендательное письмо (Т—Ж)', titleEn: 'Recommendation Letter (T—Zh)', image: 'assets/doc-tzh.svg' },
 ];
 
-const postPhotos = {
-  tj: [
-    { title: 'Т—Ж пост 1', image: 'assets/posts/tj-1.svg' },
-    { title: 'Т—Ж пост 2', image: 'assets/posts/tj-2.svg' },
-    { title: 'Т—Ж пост 3', image: 'assets/posts/tj-3.svg' },
-  ],
-  cur: [
-    { title: 'Кураторы Вышки 1', image: 'assets/posts/cur-1.svg' },
-    { title: 'Кураторы Вышки 2', image: 'assets/posts/cur-2.svg' },
-    { title: 'Кураторы Вышки 3', image: 'assets/posts/cur-3.svg' },
-  ],
-};
-
 const i18n = {
   ru: {
-    'nav.about': 'О себе', 'nav.projects': 'Проекты', 'nav.posts': 'Посты', 'nav.docs': 'Рекомендации', 'nav.contacts': 'Контакты',
+    'nav.about': 'Обо мне', 'nav.projects': 'Проекты', 'nav.posts': 'Посты', 'nav.docs': 'Рекомендации', 'nav.contacts': 'Контакты',
     'hero.role': 'Редактор · Копирайтер · Креативные индустрии',
     'hero.name': 'Тамара Пак <span>(losvinka)</span>',
     'hero.text': 'Студентка 2 курса НИУ ВШЭ. Главный редактор «Кураторы Вышки». Работаю на стыке текстов, брендинга и коммуникационных форматов.',
-    'about.title': 'О себе',
+    'about.title': 'Обо мне',
     'about.text': 'Учусь в НИУ ВШЭ на программе «Управление в креативных индустриях». Окончила школу с двумя медалями и красным аттестатом. Сейчас — главный редактор одного из самых масштабных студенческих сообществ НИУ ВШЭ «Кураторы Вышки». Хочу развиваться в издательской сфере: медиа, digital-редактура и контент-стратегии.',
     'about.s1': 'Командная работа', 'about.s2': 'Ответственность', 'about.s3': 'Адаптивность', 'about.s4': 'Многозадачность',
     'projects.title': 'Проекты', 'projects.note': 'Благодаря обучению на программе я совмещаю базу кодинга, маркетинга и ведения нон-скриптед форматов.',
@@ -129,17 +116,6 @@ function renderDocs() {
   });
 }
 
-function renderPostGallery(targetId, items) {
-  const root = document.getElementById(targetId);
-  root.innerHTML = '';
-  items.forEach((item) => {
-    const btn = document.createElement('button');
-    btn.innerHTML = `<img src="${item.image}" alt="${item.title}" />`;
-    btn.addEventListener('click', () => openPreview({ titleRu: item.title, titleEn: item.title, image: item.image }));
-    root.appendChild(btn);
-  });
-}
-
 function openPreview(doc) {
   const modal = document.getElementById('previewModal');
   document.getElementById('previewImage').src = doc.image;
@@ -151,14 +127,6 @@ document.getElementById('closeModal').addEventListener('click', () => {
   document.getElementById('previewModal').close();
 });
 
-function applyNoWidows() {
-  if (lang !== 'ru') return;
-  const selector = 'p, li, a, h1, h2, h3, .subtitle';
-  document.querySelectorAll(selector).forEach((el) => {
-    el.innerHTML = el.innerHTML.replace(/(^|\s)([А-Яа-яЁёA-Za-z]{1,2})\s+/g, '$1$2&nbsp;');
-  });
-}
-
 function applyLang() {
   document.documentElement.lang = lang;
   document.title = lang === 'ru' ? 'Тамара Пак — Portfolio' : 'Tamara Pak — Portfolio';
@@ -168,9 +136,6 @@ function applyLang() {
   document.getElementById('langSwitch').textContent = lang === 'ru' ? 'EN' : 'RU';
   renderProjects();
   renderDocs();
-  renderPostGallery('tjGallery', postPhotos.tj);
-  renderPostGallery('curGallery', postPhotos.cur);
-  applyNoWidows();
 }
 
 document.getElementById('langSwitch').addEventListener('click', () => {
